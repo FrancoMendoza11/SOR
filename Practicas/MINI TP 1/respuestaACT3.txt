@@ -1,0 +1,27 @@
+Sin uso de threads el programa dura 
+real    0m32,252s
+user    0m32,149s
+sys     0m0,007s
+
+Con el uso de threads el programa dura
+real    0m17,010s
+user    0m31,408s
+sys     0m0,043s
+
+Conclusión:
+
+El uso de threads ha reducido significativamente el tiempo de ejecución total (real) del programa, de aproximadamente 32 segundos a 17 segundos. Esto se debe a la capacidad de los threads de ejecutar tareas en paralelo, aprovechando mejor los recursos del procesador.
+
+Observaciones:
+
+    Tiempo real: Este tiempo se reduce casi a la mitad con el uso de threads, lo que indica que el programa puede ejecutarse de manera más eficiente en paralelo.
+
+    Tiempo de usuario: El tiempo total de CPU consumido por todos los threads combinados es casi el mismo en ambos casos, lo que muestra que el trabajo realizado es similar, pero se distribuye mejor en el tiempo gracias a la ejecución concurrente.
+
+    Tiempo de sistema: Aumenta ligeramente con el uso de threads, ya que gestionar múltiples threads implica un pequeño overhead para el sistema operativo.
+
+Importancia de la cantidad de núcleos en el procesador:
+
+ 	Si el procesador tiene múltiples núcleos, cada thread puede ejecutarse en un núcleo separado, lo que permite un verdadero paralelismo y una reducción significativa del tiempo de ejecución.
+ 	En un procesador con más núcleos, el rendimiento mejora al distribuir mejor la carga de trabajo entre los núcleos. Si un procesador tiene menos núcleos, los threads tendrán que compartir los mismos recursos, limitando los beneficios de la concurrencia.
+

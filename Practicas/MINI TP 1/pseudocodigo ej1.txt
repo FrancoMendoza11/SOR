@@ -1,7 +1,0 @@
-miniTP(nombre){
-	if nombre = "" return error
-	crearDirectorio(nombre)
-	agregarArchivoADirectorio(nombre)
-	agregarListadoAlArchivo(nombre)//ver nombres y permisos
-	mostrarPorPantallaArchivo()
-}
