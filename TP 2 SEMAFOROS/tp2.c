@@ -68,12 +68,15 @@ void* asador(void* arg) {
 void* manucho(void* arg) {
     sem_wait(&sem_invitadosSentados); // Espera a que todos los invitados estén sentados
     Sentarse();  // Manucho se sienta
-    sem_post(&sem_manuchoSentado); // Señala que Manucho se sentó
-
+	
+	for (int i = 0; i < N; i++) {
+        sem_post(&sem_manuchoSentado); // Señala que Manucho se sentó
+    }
+	
     sem_wait(&sem_comidaServida); // Espera a que le sirvan la comida
     Comer();  // Manucho come
     sem_post(&sem_manuchoTerminaDeComer); // Señala que terminó de comer
-    printf("Manucho termina de comer");
+
     Lanzar_pregunta_mundialista();  // Lanza la pregunta sobre el Mundial
     sem_post(&sem_preguntaLanzada); // Señala que la pregunta fue lanzada
 
@@ -140,7 +143,7 @@ int main() {
 
     // Creación de threads
     pthread_create(&thread_asador, NULL, asador, NULL);
-    pthread_create(&thread_manucho, NULL, manucho, NULL);
+    pthread_create(&thread_manucho, NULL, manucho, (void *) &N);
 
     for (int i = 0; i < N; i++) {
         pthread_create(&thread_invitados[i], NULL, invitado, NULL);
