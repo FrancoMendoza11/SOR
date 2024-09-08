@@ -1,9 +1,9 @@
-Sin uso de threads el programa dura 
+Sin uso de threads el programa dura: 
 real    0m32,252s
 user    0m32,149s
 sys     0m0,007s
 
-Con el uso de threads el programa dura
+Con el uso de threads el programa dura:
 real    0m17,010s
 user    0m31,408s
 sys     0m0,043s
