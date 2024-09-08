@@ -18,42 +18,42 @@ sem_t sem_seLevantoManucho;
 // Funciones modificadas con sleep() y mensajes
 void HacerAsado() {
     printf("Asador está preparando el asado...\n");
-    sleep(5);  // Simula el tiempo para hacer el asado
+//    sleep(5);  // Simula el tiempo para hacer el asado
 }
 
 void Sentarse() {
     printf("Sentándose...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 void Comer() {
     printf("Comiendo...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 void Lanzar_pregunta_mundialista() {
     printf("Manucho lanza una pregunta sobre el Mundial...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 void Lanzar_respuesta_mundialista() {
     printf("Un invitado responde la pregunta mundialista...\n");
-    sleep(5);
+ //   sleep(5);
 }
 
 void Enojarse() {
     printf("Manucho se enoja por la respuesta...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 void Levantarse() {
     printf("Levantándose...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 void ServirComida() {
     printf("Mozos están sirviendo la comida...\n");
-    sleep(5);
+//    sleep(5);
 }
 
 // Función del Asador
@@ -66,6 +66,7 @@ void* asador(void* arg) {
 
 // Función de Manucho
 void* manucho(void* arg) {
+	int N = *((int*) arg);
     sem_wait(&sem_invitadosSentados); // Espera a que todos los invitados estén sentados
     Sentarse();  // Manucho se sienta
 	
